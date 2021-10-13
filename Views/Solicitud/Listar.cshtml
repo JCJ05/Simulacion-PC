@@ -1,0 +1,53 @@
+@model List<Solicitud>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Usuarios</h1>
+    
+
+    @if (Model.Count == 0) {
+        <p>No hay Usuarios Registrados</p>
+    }
+    
+    <table class="table">
+
+        <thead class="thead-dark">
+
+           <th>Nombre</th>
+           <th>Precio</th>
+           <th>categoria</th>
+           <th>celular</th>
+           <th>comprador</th>
+            <th>fecha</th>
+             <th>foto</th>
+             <th>lugar</th>
+
+        </thead>
+    
+      <tbody>
+
+    @foreach (var soli in Model) {
+       
+       <tr>
+       
+          <td>@soli.nombre</td>
+          <td>@soli.precio</td>
+          <td>@soli.categoria</td>
+          <td>@soli.celular</td>
+          <td>@soli.comprador</td>
+          <td>@soli.fecha</td>
+          <td>@soli.foto</td>
+          <td>@soli.lugar</td>
+             
+         
+
+       </tr>
+
+    }
+
+    </tbody>
+
+    </table>
+</div>

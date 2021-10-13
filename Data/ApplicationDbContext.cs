@@ -14,5 +14,10 @@ namespace Simulacion_PC.Data
         }
 
 
+        public DbSet<Simulacion_PC.Models.Solicitud> DataContactos { get; set; }
+
+         public DbSet<Simulacion_PC.Models.Categoria> DataCategorias { get; set; }
+
+        
     }
 }
