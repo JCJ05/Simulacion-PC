@@ -29,13 +29,13 @@ namespace Simulacion_PC.Models
 
        public DateTime fecha {get; set;}
 
-       public Categoria categoria {get; set;}
+       public Categoria Categoria {get; set;}
 
        
        public Solicitud()
        {
 
-           this.fecha = new DateTime();
+           this.fecha = DateTime.Now;
            
        }
        

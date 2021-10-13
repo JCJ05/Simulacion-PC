@@ -11,43 +11,39 @@
         <p>No hay Usuarios Registrados</p>
     }
     
-    <table class="table">
-
-        <thead class="thead-dark">
-
-           <th>Nombre</th>
-           <th>Precio</th>
-           <th>categoria</th>
-           <th>celular</th>
-           <th>comprador</th>
-            <th>fecha</th>
-             <th>foto</th>
-             <th>lugar</th>
-
-        </thead>
     
-      <tbody>
 
-    @foreach (var soli in Model) {
-       
-       <tr>
-       
-          <td>@soli.nombre</td>
-          <td>@soli.precio</td>
-          <td>@soli.categoria</td>
-          <td>@soli.celular</td>
-          <td>@soli.comprador</td>
-          <td>@soli.fecha</td>
-          <td>@soli.foto</td>
-          <td>@soli.lugar</td>
-             
-         
-
-       </tr>
-
-    }
-
-    </tbody>
-
-    </table>
-</div>
+h1>@ViewData["Title"]</h1>
+  <div class="container">
+    <h1>@ViewData["Message"]</h1>
+    <div class="row">
+      <div class="col">
+        <div id="products" class="mb-3">
+          <div class="row">
+            @foreach (var item in Model) {
+            <div class="col-sm-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="card-img-actions">
+                    <img class="img-responsive" width="96" height="150"
+                       src="@item.foto" alt="Icono"  />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h5>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.precio)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.descripcion)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.celular)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.lugar)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.fecha)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.Categoria.nombre)</p>
+                  
+                </div>
+              </div>
+            </div>
+            }
+         </div>
+        </div>
+      </div>
+    </div>
+  </div> 
